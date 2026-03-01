@@ -198,12 +198,7 @@
       line-height: 1.8;
     }
 
-    /* ── MECHANICS ────────────────────────────── */
-    .mechanics {
-      padding: 5rem 2rem;
-      background: var(--surface);
-    }
-
+    /* ── SHARED SECTION LABELS ────────────────── */
     .section-label {
       display: block;
       text-align: center;
@@ -222,51 +217,6 @@
       font-weight: 700;
       color: var(--text);
       margin-bottom: 3.5rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: linear-gradient(160deg, #0f0f22, #0a0a18);
-      border: 1px solid rgba(180, 50, 255, 0.2);
-      border-radius: 8px;
-      padding: 2rem 1.75rem;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-    }
-
-    .card:hover {
-      border-color: var(--neon);
-      box-shadow: 0 0 25px rgba(180, 50, 255, 0.2);
-      transform: translateY(-3px);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .card h3 {
-      font-family: 'Orbitron', monospace;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--neon);
-      text-shadow: 0 0 10px var(--neon-glow);
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
     }
 
     /* ── FEATURES ─────────────────────────────── */
@@ -416,33 +366,6 @@
     </div>
   </section>
 
-  <!-- MECHANICS -->
-  <section class="mechanics">
-    <span class="section-label">How it works</span>
-    <h2 class="section-title">Your Arsenal of Decisions</h2>
-    <div class="cards">
-      <div class="card">
-        <span class="card-icon">🎰</span>
-        <h3>Control the Chaos</h3>
-        <p>You have limited Actions per encounter. Spin for a fresh board, swap a symbol, or hold a reel to protect your setup. You can't hold the same reel twice in a row — every choice costs something.</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">⚡</span>
-        <h3>Push Your Luck</h3>
-        <p>Each encounter builds toward a rising jackpot. The odds increase as you play — it can trigger early or keep you waiting. When it fires, pick one of three rewards and adapt. Even rough rolls are recoverable.</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">🕳️</span>
-        <h3>Sacrifice &amp; Adapt</h3>
-        <p>Feed unwanted runes, gems, or symbols to the Black Hole. Trade surplus power for gold, score, jackpots, or extra Actions. Nothing has to sit unused if you plan properly.</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">💎</span>
-        <h3>Build &amp; Specialize</h3>
-        <p>Socket gems to shift colors, timing, and rewards. Copy strong symbols. Stack value over time. Upgrade small combos for steady output or build toward massive late-game explosions.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- FEATURES -->
   <section class="features">
