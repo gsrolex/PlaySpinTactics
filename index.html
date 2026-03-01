@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin Tactics — Coming Soon on Steam</title>
+  <meta name="description" content="SpinTactics blends the tension of slot machines with calculated, push-your-luck strategy. Match colors, stack runes, and manipulate your reels. Wishlist now on Steam.">
+  <meta property="og:title" content="Spin Tactics">
+  <meta property="og:description" content="Spin. Push. Outsmart the Odds.">
+  <meta property="og:image" content="assets/GoodLogo.jpg">
+  <meta property="og:url" content="https://playspintactics.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/IconApp.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --neon: #c84fff;
+      --neon-dim: #8b2fc9;
+      --neon-glow: rgba(180, 50, 255, 0.5);
+      --bg: #060610;
+      --surface: #0d0d1e;
+      --text: #e8e0ff;
+      --muted: #9985bb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/GoodLogo.jpg') center/cover no-repeat;
+      filter: brightness(0.45) saturate(1.2);
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, #060610 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+
+    .hero-logo {
+      width: min(420px, 80vw);
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 30px var(--neon-glow)) drop-shadow(0 0 60px var(--neon-glow));
+    }
+
+    .hero-tagline {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--neon);
+      text-shadow: 0 0 20px var(--neon-glow);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn-wishlist {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #1a0a2e, #2d0a5c);
+      border: 1.5px solid var(--neon);
+      color: var(--text);
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 20px var(--neon-glow), inset 0 0 20px rgba(180,50,255,0.05);
+    }
+
+    .btn-wishlist:hover {
+      background: linear-gradient(135deg, #2d0a5c, #4a0a8c);
+      box-shadow: 0 0 35px var(--neon-glow), 0 0 60px rgba(180,50,255,0.3), inset 0 0 30px rgba(180,50,255,0.1);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn-wishlist svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--neon);
+      flex-shrink: 0;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── PITCH ────────────────────────────────── */
+    .pitch {
+      position: relative;
+      padding: 6rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .pitch-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/LibraryHeroNew.png') center/cover no-repeat;
+      opacity: 0.12;
+      z-index: 0;
+    }
+
+    .pitch-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pitch h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .pitch h2 span {
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon-glow);
+    }
+
+    .pitch p {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── MECHANICS ────────────────────────────── */
+    .mechanics {
+      padding: 5rem 2rem;
+      background: var(--surface);
+    }
+
+    .section-label {
+      display: block;
+      text-align: center;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(160deg, #0f0f22, #0a0a18);
+      border: 1px solid rgba(180, 50, 255, 0.2);
+      border-radius: 8px;
+      padding: 2rem 1.75rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .card:hover {
+      border-color: var(--neon);
+      box-shadow: 0 0 25px rgba(180, 50, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--neon);
+      text-shadow: 0 0 10px var(--neon-glow);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FEATURES ─────────────────────────────── */
+    .features {
+      padding: 5rem 2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.2rem 1rem;
+      border-left: 2px solid var(--neon-dim);
+    }
+
+    .feature-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--neon);
+      box-shadow: 0 0 8px var(--neon-glow);
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .feature-item span {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── CTA BOTTOM ───────────────────────────── */
+    .cta-bottom {
+      position: relative;
+      padding: 7rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-bottom-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/LibraryHeroNew.png') center/cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .cta-bottom-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%);
+      z-index: 1;
+    }
+
+    .cta-bottom-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-bottom h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-bottom p {
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid rgba(180, 50, 255, 0.15);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--neon);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: text-shadow 0.2s;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 10px var(--neon-glow);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── DIVIDER ──────────────────────────────── */
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--neon), transparent);
+      margin: 0 auto 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/Logo.png" alt="Spin Tactics" class="hero-logo">
+      <p class="hero-tagline">Spin. Push. Outsmart the Odds.</p>
+      <p class="hero-sub">
+        Play careless and collapse.<br>Play smart and break the system.
+      </p>
+      <a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener" class="btn-wishlist">
+        <!-- Steam icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/>
+        </svg>
+        Wishlist on Steam
+      </a>
+      <div class="coming-soon-badge">▸ Coming Soon</div>
+    </div>
+    <div class="scroll-hint">▾ scroll</div>
+  </section>
+
+  <!-- PITCH -->
+  <section class="pitch">
+    <div class="pitch-bg"></div>
+    <div class="pitch-content">
+      <h2>Slot machines meet <span>tactical strategy</span></h2>
+      <div class="divider"></div>
+      <p>
+        SpinTactics blends the tension of slot machines with calculated, push-your-luck strategy.
+        Match colors to build powerful combos, stack runes, and manipulate your reels to shape the outcome.
+        You always know what symbols exist — you just never know when they'll appear.
+      </p>
+    </div>
+  </section>
+
+  <!-- MECHANICS -->
+  <section class="mechanics">
+    <span class="section-label">How it works</span>
+    <h2 class="section-title">Your Arsenal of Decisions</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🎰</span>
+        <h3>Control the Chaos</h3>
+        <p>You have limited Actions per encounter. Spin for a fresh board, swap a symbol, or hold a reel to protect your setup. You can't hold the same reel twice in a row — every choice costs something.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>Push Your Luck</h3>
+        <p>Each encounter builds toward a rising jackpot. The odds increase as you play — it can trigger early or keep you waiting. When it fires, pick one of three rewards and adapt. Even rough rolls are recoverable.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🕳️</span>
+        <h3>Sacrifice &amp; Adapt</h3>
+        <p>Feed unwanted runes, gems, or symbols to the Black Hole. Trade surplus power for gold, score, jackpots, or extra Actions. Nothing has to sit unused if you plan properly.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💎</span>
+        <h3>Build &amp; Specialize</h3>
+        <p>Socket gems to shift colors, timing, and rewards. Copy strong symbols. Stack value over time. Upgrade small combos for steady output or build toward massive late-game explosions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <span class="section-label">Features</span>
+    <h2 class="section-title">What's Inside</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Tactical slot-based combat with real stakes</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Push-your-luck jackpot system</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Deep rune and gem synergies</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Strategic sacrifice via the Black Hole</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Escalating boss encounters</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Online leaderboards</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>30–60 minute roguelike runs</span>
+      </div>
+      <div class="feature-item">
+        <span class="dot"></span>
+        <span>Refine strategies across attempts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-bottom">
+    <div class="cta-bottom-bg"></div>
+    <div class="cta-bottom-overlay"></div>
+    <div class="cta-bottom-content">
+      <h2>Ready to break the system?</h2>
+      <p>Wishlist Spin Tactics on Steam and be notified on launch.</p>
+      <a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener" class="btn-wishlist">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/>
+        </svg>
+        Wishlist on Steam
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener">View on Steam →</a>
+    <p>&copy; 2025 Spin Tactics. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
