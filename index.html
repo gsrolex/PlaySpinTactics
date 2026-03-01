@@ -42,24 +42,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       text-align: center;
-      padding: 0 2rem 5rem;
+      padding: 2rem;
       overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('assets/GoodLogo.jpg') center 40%/cover no-repeat;
-      filter: brightness(0.6) saturate(1.2);
+      background: url('assets/GoodLogo.jpg') center/cover no-repeat;
+      filter: brightness(0.45) saturate(1.2);
       z-index: 0;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, transparent 40%, rgba(6,6,16,0.7) 70%, #060610 100%);
+      background: radial-gradient(ellipse at center, transparent 30%, #060610 100%);
       z-index: 1;
     }
 
@@ -393,9 +393,6 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tagline">Spin. Push. Outsmart the Odds.</p>
-      <p class="hero-sub">
-        Play careless and collapse.<br>Play smart and break the system.
-      </p>
       <a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener" class="btn-wishlist">
         <!-- Steam icon -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
