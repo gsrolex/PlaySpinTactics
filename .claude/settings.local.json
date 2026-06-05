@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "PowerShell(git *)",
+      "PowerShell($r = Invoke-WebRequest -Uri \"https://playspintactics.com\" -UseBasicParsing; $r.StatusCode; if \\($r.Content -match 'MainCapsule'\\) { \"LIVE SITE HAS NEW VERSION\" } else { \"live site still on OLD version\" }; if \\($r.Content -match 'social-row'\\) { \"socials present\" } else { \"socials NOT present\" })",
+      "PowerShell($r = Invoke-WebRequest -Uri \"https://playspintactics.com\" -UseBasicParsing; $live = $r.Content; $old = git -C \"C:\\\\Users\\\\ammon\\\\PlaySpinTactics\" show 2766cc1:index.html | Out-String; if \\($live.Trim\\(\\) -eq $old.Trim\\(\\)\\) { \"live == last main commit \\(2766cc1\\) — main builds DO deploy\" } else { \"live differs from 2766cc1 too\" }; $r.Headers['cf-ray']; $r.Headers['last-modified'])",
+      "PowerShell($r = Invoke-WebRequest -Uri \"https://playspintactics.com\" -UseBasicParsing; $live = $r.Content; $live.Length; $live.Substring\\(0, 700\\))",
+      "Bash(curl -s https://playspintactics.com)"
     ]
   }
 }
