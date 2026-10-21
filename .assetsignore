@@ -1,0 +1,9 @@
+.git
+.gitignore
+.claude
+.assetsignore
+Debug
+GraphicAssets
+wrangler.jsonc
+node_modules
+.wrangler

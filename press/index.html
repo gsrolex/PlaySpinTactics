@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin Tactics — Press Kit</title>
+  <meta name="description" content="Press kit for Spin Tactics: fact sheet, description, trailer, screenshots, logos, key art and companion art.">
+  <meta property="og:title" content="Spin Tactics — Press Kit">
+  <meta property="og:image" content="https://playspintactics.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="920">
+  <meta property="og:image:height" content="430">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@PlaySpinTactics">
+  <meta name="twitter:creator" content="@PlaySpinTactics">
+  <meta name="twitter:title" content="Spin Tactics — Press Kit">
+  <meta name="twitter:description" content="Fact sheet, trailer, screenshots, logos, key art and review keys for Spin Tactics.">
+  <meta name="twitter:image" content="https://playspintactics.com/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Spin Tactics logo next to a neon slot machine board">
+  <meta name="theme-color" content="#060610">
+  <link rel="icon" type="image/png" href="../assets/IconApp.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --neon: #c84fff; --neon-glow: rgba(180, 50, 255, 0.5); --neon-soft: rgba(180, 50, 255, 0.18);
+      --cyan: #4fe8ff; --cyan-glow: rgba(79, 232, 255, 0.45);
+      --bg: #060610; --surface: #0c0c1c; --surface-2: #12122a; --line: rgba(160, 120, 255, 0.14);
+      --text: #ece6fb; --muted: #a396c4; --maxw: 1080px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--neon); }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; color: #fff; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+    .top { border-bottom: 1px solid var(--line); background: var(--surface); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.8rem; }
+    .top a { color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .top a:hover { color: #fff; }
+
+    header.hero { text-align: center; padding-block: 4rem 3rem; background: radial-gradient(900px 380px at 50% 0%, rgba(120, 40, 200, 0.18), transparent); }
+    header.hero img { width: min(260px, 60vw); margin: 0 auto 1.6rem; }
+    header.hero h1 { font-size: clamp(1.3rem, 3.4vw, 1.9rem); letter-spacing: 0.18em; text-transform: uppercase; text-shadow: 0 0 22px var(--neon-glow); }
+    header.hero p { color: var(--muted); margin-top: 0.6rem; }
+
+    nav.jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1.8rem; }
+    nav.jump a { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--text);
+      border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.9rem; background: rgba(180, 50, 255, 0.05); }
+    nav.jump a:hover { border-color: var(--neon); }
+
+    section { padding-block: 3rem; border-top: 1px solid var(--line); }
+    section h2 { font-size: 1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cyan); text-shadow: 0 0 10px var(--cyan-glow); margin-bottom: 1.4rem; }
+    section p + p { margin-top: 0.9rem; }
+    .lead { font-size: 1.12rem; color: #fff; }
+
+    .facts { display: grid; grid-template-columns: 11rem 1fr; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .facts dt, .facts dd { padding: 0.7rem 1rem; border-bottom: 1px solid var(--line); }
+    .facts dt { background: var(--surface-2); font-weight: 600; color: var(--muted); font-size: 0.86rem; }
+    .facts dd { background: var(--surface); }
+    .facts dt:nth-last-of-type(1), .facts dd:last-of-type { border-bottom: 0; }
+    @media (max-width: 560px) { .facts { grid-template-columns: 1fr; } .facts dt { border-bottom: 0; padding-bottom: 0.2rem; } }
+
+    ul.features { list-style: none; display: grid; gap: 0.7rem; }
+    ul.features li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1.1rem; }
+    ul.features strong { color: #fff; }
+    .note { margin-top: 1.4rem; font-weight: 600; color: #fff; }
+
+    .trailer { position: relative; aspect-ratio: 16 / 9; border: 1px solid rgba(200, 79, 255, 0.35); border-radius: 14px; overflow: hidden; background: var(--surface); }
+    .trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .trailer-link { margin-top: 0.8rem; font-size: 0.9rem; }
+
+    .grid { display: grid; gap: 1rem; }
+    .grid.shots, .grid.art { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .grid.logos { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .grid.cards { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    .dl { display: flex; flex-direction: column; text-decoration: none; color: var(--text); background: var(--surface);
+      border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: border-color 0.2s ease, transform 0.2s ease; }
+    .dl:hover { border-color: var(--neon); transform: translateY(-2px); }
+    .dl img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .dl.logo img { object-fit: contain; padding: 1.2rem; background: #000; }
+    .dl.card img { aspect-ratio: auto; padding: 0.6rem; }
+    .dl.art img { object-fit: contain; background: #000; }
+    .dl span { padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); }
+    .dl span::after { content: ' ↓'; color: var(--neon); }
+    .hint { color: var(--muted); font-size: 0.86rem; margin-top: -0.6rem; margin-bottom: 1.2rem; }
+
+    .key-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.2rem; }
+    .btn-key { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; padding: 1.1rem 1.3rem; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(123, 31, 212, 0.35), rgba(178, 59, 255, 0.18)); border: 1px solid rgba(200, 79, 255, 0.5);
+      transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .btn-key:hover { box-shadow: 0 0 26px var(--neon-soft); transform: translateY(-2px); }
+    .btn-key strong { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; }
+    .btn-key span { color: var(--muted); font-size: 0.9rem; }
+    .btn-key span::after { content: ' →'; color: var(--neon); }
+    footer { border-top: 1px solid var(--line); padding-block: 2.4rem; text-align: center; color: var(--muted); font-size: 0.78rem; }
+    a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="wrap">
+      <a href="../">← Spin Tactics</a>
+      <a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener">Steam page</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <img src="../assets/press/logos/spin-tactics-logo-neon-glow.png" alt="Spin Tactics logo">
+      <h1>Press Kit</h1>
+      <p>Everything you need to cover Spin Tactics. All assets are free to use in coverage.</p>
+      <nav class="jump" aria-label="Sections">
+        <a href="#facts">Fact sheet</a><a href="#about">About</a><a href="#features">Features</a><a href="#trailer">Trailer</a>
+        <a href="#screenshots">Screenshots</a><a href="#logos">Logos</a><a href="#key-art">Key art</a><a href="#companions">Companions</a><a href="#contact">Keys &amp; contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="facts">
+      <h2>Fact sheet</h2>
+      <dl class="facts">
+        <dt>Title</dt><dd>Spin Tactics</dd>
+        <dt>Developer</dt><dd>Dead Broke Games</dd>
+        <dt>Publisher</dt><dd>Self-published</dd>
+        <dt>Release date</dt><dd>November 12, 2026</dd>
+        <dt>Platforms</dt><dd>Windows and macOS, on Steam</dd>
+        <dt>Price</dt><dd>$14.99 USD, with Steam regional pricing</dd>
+        <dt>Free demo</dt><dd>Yes, available now on Steam</dd>
+        <dt>Genre</dt><dd>Tactical roguelike / deckbuilder</dd>
+        <dt>Run length</dt><dd>30 to 60 minutes</dd>
+        <dt>Steam</dt><dd><a href="https://store.steampowered.com/app/3856990/Spin_Tactics/" target="_blank" rel="noopener">store.steampowered.com/app/3856990</a></dd>
+        <dt>Website</dt><dd><a href="https://playspintactics.com/">playspintactics.com</a></dd>
+        <dt>Press contact</dt><dd><a href="mailto:spintactics2d@gmail.com">spintactics2d@gmail.com</a></dd>
+        <dt>Socials</dt><dd><a href="https://x.com/PlaySpinTactics" target="_blank" rel="noopener">X</a> ·
+          <a href="https://discord.gg/7kXTGyWjWc" target="_blank" rel="noopener">Discord</a> ·
+          <a href="https://www.youtube.com/channel/UC9TVGazYX4suPV6o6mBnn6w" target="_blank" rel="noopener">YouTube</a> ·
+          <a href="https://www.tiktok.com/@spin.tactics" target="_blank" rel="noopener">TikTok</a> ·
+          <a href="https://www.instagram.com/spin.tactics" target="_blank" rel="noopener">Instagram</a></dd>
+      </dl>
+    </section>
+
+    <section id="about">
+      <h2>About the game</h2>
+      <p class="lead">Spin Tactics is a tactical roguelike where you rig the slot machine. Every spin fills the board, and every Action counts.</p>
+      <p>Connect three or more symbols of one colour and watch your combos climb from SMALL all the way to GALACTIC. Build your engine from Companions that fire in order, so where you place them matters. Socket Gems that change a symbol's colour or timing, or clone it, and keep them for the whole run. Sacrifice Companions, symbols or Gems to the Black Hole for rewards, take on Jackpots and boss challenges, and choose your route between them.</p>
+      <p>Between runs, spend credits on booster packs of Chips and Portals to build your own setup. Clear the game and Ascension raises the stakes, with tougher bosses every level. Every run counts on the online leaderboards.</p>
+      <p class="note">No real-money gambling. No microtransactions.</p>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul class="features">
+        <li><strong>Rig the machine.</strong> A slot machine where you make the decisions: swap, stamp, clone and recolour symbols to set up the combo you want.</li>
+        <li><strong>Companions that fire in order.</strong> Equip eight and keep four in your bag. Placement and timing (Live, On Spin, Resolve, Passive) decide how your engine runs.</li>
+        <li><strong>Gems that stay all run.</strong> Change a symbol's colour or timing, clone it, or make it trigger instantly.</li>
+        <li><strong>The Black Hole.</strong> Sacrifice Companions, symbols or Gems for rewards.</li>
+        <li><strong>Bosses, Jackpots and route choice.</strong> Every encounter is different.</li>
+        <li><strong>Ascension and leaderboards.</strong> Tougher bosses every level, and every run counts online.</li>
+      </ul>
+    </section>
+
+    <section id="developer">
+      <h2>About the developer</h2>
+      <p>Dead Broke Games is Ammon, a solo developer. Spin Tactics has been in development for almost two years, much of it in the late hours after everything else was done. It's the game Ammon wanted to play and couldn't find: a slot machine you get to rig.</p>
+    </section>
+
+    <section id="trailer">
+      <h2>Trailer</h2>
+      <div class="trailer">
+        <iframe src="https://www.youtube-nocookie.com/embed/ti62crWbHZc?rel=0" title="Spin Tactics trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="trailer-link"><a href="https://www.youtube.com/watch?v=ti62crWbHZc" target="_blank" rel="noopener">Watch on YouTube</a> &nbsp;·&nbsp; <a href="https://drive.google.com/file/d/1HTtB8lVU8E04ZtLrWPUluNiY68NhvrOJ/view?usp=sharing" target="_blank" rel="noopener">Download the video file (Google Drive)</a></p>
+    </section>
+
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <p class="hint">2560×1440. Click to download.</p>
+      <div class="grid shots">
+        <a class="dl shot" href="../assets/press/screenshots/01-galactic-combo.jpg" download><img src="../assets/press/screenshots/01-galactic-combo-thumb.jpg" alt="Galactic Combo" loading="lazy"><span>Galactic Combo</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/02-companions-firing.jpg" download><img src="../assets/press/screenshots/02-companions-firing-thumb.jpg" alt="Companions Firing" loading="lazy"><span>Companions Firing</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/03-combo-payout.jpg" download><img src="../assets/press/screenshots/03-combo-payout-thumb.jpg" alt="Combo Payout" loading="lazy"><span>Combo Payout</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/04-choose-your-encounter.jpg" download><img src="../assets/press/screenshots/04-choose-your-encounter-thumb.jpg" alt="Choose Your Encounter" loading="lazy"><span>Choose Your Encounter</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/05-shop.jpg" download><img src="../assets/press/screenshots/05-shop-thumb.jpg" alt="Shop" loading="lazy"><span>Shop</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/06-legendary-pack.jpg" download><img src="../assets/press/screenshots/06-legendary-pack-thumb.jpg" alt="Legendary Pack" loading="lazy"><span>Legendary Pack</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/07-rare-pack-reveal.jpg" download><img src="../assets/press/screenshots/07-rare-pack-reveal-thumb.jpg" alt="Rare Pack Reveal" loading="lazy"><span>Rare Pack Reveal</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/08-pulsar-wheel.jpg" download><img src="../assets/press/screenshots/08-pulsar-wheel-thumb.jpg" alt="Pulsar Wheel" loading="lazy"><span>Pulsar Wheel</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/09-blood-sacrifice.jpg" download><img src="../assets/press/screenshots/09-blood-sacrifice-thumb.jpg" alt="Blood Sacrifice" loading="lazy"><span>Blood Sacrifice</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/10-building-the-board.jpg" download><img src="../assets/press/screenshots/10-building-the-board-thumb.jpg" alt="Building The Board" loading="lazy"><span>Building The Board</span></a>
+        <a class="dl shot" href="../assets/press/screenshots/11-portal.jpg" download><img src="../assets/press/screenshots/11-portal-thumb.jpg" alt="Portal" loading="lazy"><span>Portal</span></a>
+      </div>
+    </section>
+
+    <section id="logos">
+      <h2>Logos</h2>
+      <div class="grid logos">
+        <a class="dl logo" href="../assets/press/logos/spin-tactics-logo-neon-glow.png" download><img src="../assets/press/logos/spin-tactics-logo-neon-glow.png" alt="Neon glow logo (transparent)" loading="lazy"><span>Neon glow logo (transparent)</span></a>
+        <a class="dl logo" href="../assets/press/logos/spin-tactics-logo-white.png" download><img src="../assets/press/logos/spin-tactics-logo-white.png" alt="White logo (transparent)" loading="lazy"><span>White logo (transparent)</span></a>
+        <a class="dl logo" href="../assets/press/logos/spin-tactics-logo-neon-on-black.png" download><img src="../assets/press/logos/spin-tactics-logo-neon-on-black.png" alt="Neon logo on black" loading="lazy"><span>Neon logo on black</span></a>
+        <a class="dl logo" href="../assets/press/logos/spin-tactics-icon.png" download><img src="../assets/press/logos/spin-tactics-icon.png" alt="App icon" loading="lazy"><span>App icon</span></a>
+      </div>
+    </section>
+
+    <section id="key-art">
+      <h2>Key art</h2>
+      <div class="grid art">
+        <a class="dl art" href="../assets/press/key-art/header-capsule.jpg" download><img src="../assets/press/key-art/header-capsule-thumb.jpg" alt="Header Capsule" loading="lazy"><span>Header Capsule</span></a>
+        <a class="dl art" href="../assets/press/key-art/library-hero.jpg" download><img src="../assets/press/key-art/library-hero-thumb.jpg" alt="Library Hero" loading="lazy"><span>Library Hero</span></a>
+        <a class="dl art" href="../assets/press/key-art/main-capsule.jpg" download><img src="../assets/press/key-art/main-capsule-thumb.jpg" alt="Main Capsule" loading="lazy"><span>Main Capsule</span></a>
+        <a class="dl art" href="../assets/press/key-art/vertical-capsule.jpg" download><img src="../assets/press/key-art/vertical-capsule-thumb.jpg" alt="Vertical Capsule" loading="lazy"><span>Vertical Capsule</span></a>
+      </div>
+    </section>
+
+    <section id="companions">
+      <h2>Companion art</h2>
+      <p class="hint">Companions in all four rarities. Transparent PNG.</p>
+      <div class="grid cards">
+        <a class="dl card" href="../assets/press/companions/cue-astra-legendary.png" download><img src="../assets/press/companions/cue-astra-legendary-thumb.png" alt="Cue Astra (Legendary)" loading="lazy"><span>Cue Astra (Legendary)</span></a>
+        <a class="dl card" href="../assets/press/companions/diecast-suvi-common.png" download><img src="../assets/press/companions/diecast-suvi-common-thumb.png" alt="Diecast Suvi (Common)" loading="lazy"><span>Diecast Suvi (Common)</span></a>
+        <a class="dl card" href="../assets/press/companions/lady-luna-rare.png" download><img src="../assets/press/companions/lady-luna-rare-thumb.png" alt="Lady Luna (Rare)" loading="lazy"><span>Lady Luna (Rare)</span></a>
+        <a class="dl card" href="../assets/press/companions/magnus-starfall-rare.png" download><img src="../assets/press/companions/magnus-starfall-rare-thumb.png" alt="Magnus Starfall (Rare)" loading="lazy"><span>Magnus Starfall (Rare)</span></a>
+        <a class="dl card" href="../assets/press/companions/nebulajelly-rare.png" download><img src="../assets/press/companions/nebulajelly-rare-thumb.png" alt="Nebulajelly (Rare)" loading="lazy"><span>Nebulajelly (Rare)</span></a>
+        <a class="dl card" href="../assets/press/companions/quickdraw-common.png" download><img src="../assets/press/companions/quickdraw-common-thumb.png" alt="Quickdraw (Common)" loading="lazy"><span>Quickdraw (Common)</span></a>
+        <a class="dl card" href="../assets/press/companions/star-wyrm-legendary.png" download><img src="../assets/press/companions/star-wyrm-legendary-thumb.png" alt="Star Wyrm (Legendary)" loading="lazy"><span>Star Wyrm (Legendary)</span></a>
+        <a class="dl card" href="../assets/press/companions/thane-the-timless-epic.png" download><img src="../assets/press/companions/thane-the-timless-epic-thumb.png" alt="Thane The Timeless (Epic)" loading="lazy"><span>Thane The Timeless (Epic)</span></a>
+        <a class="dl card" href="../assets/press/companions/the-hoarder-epic.png" download><img src="../assets/press/companions/the-hoarder-epic-thumb.png" alt="The Hoarder (Epic)" loading="lazy"><span>The Hoarder (Epic)</span></a>
+        <a class="dl card" href="../assets/press/companions/the-tenth-star-legendary.png" download><img src="../assets/press/companions/the-tenth-star-legendary-thumb.png" alt="The Tenth Star (Legendary)" loading="lazy"><span>The Tenth Star (Legendary)</span></a>
+        <a class="dl card" href="../assets/press/companions/warlord-kragg-legendary.png" download><img src="../assets/press/companions/warlord-kragg-legendary-thumb.png" alt="Warlord Kragg (Legendary)" loading="lazy"><span>Warlord Kragg (Legendary)</span></a>
+        <a class="dl card" href="../assets/press/companions/zephyr-the-cosmic-emperor-legendary.png" download><img src="../assets/press/companions/zephyr-the-cosmic-emperor-legendary-thumb.png" alt="Zephyr The Cosmic Emperor (Legendary)" loading="lazy"><span>Zephyr The Cosmic Emperor (Legendary)</span></a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Review keys &amp; contact</h2>
+      <div class="key-buttons">
+        <a class="btn-key" href="https://www.keymailer.co/g/games/679b2c6d" target="_blank" rel="noopener"><strong>Content creators</strong><span>Request a Steam key on Keymailer</span></a>
+        <a class="btn-key" href="https://www.game.press/g/games/679b2c6d" target="_blank" rel="noopener"><strong>Press</strong><span>Request a key on Game.Press</span></a>
+      </div>
+      <p>Or email <a href="mailto:spintactics2d@gmail.com">spintactics2d@gmail.com</a> with a link to your outlet or channel.</p>
+      <p><strong>Streaming and videos:</strong> content creators are welcome to stream and publish videos of Spin Tactics, including monetised videos. No permission needed. A link to the Steam page is appreciated.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Dead Broke Games. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.
+  </footer>
+</body>
+</html>

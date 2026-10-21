@@ -1,2 +1,6 @@
 GraphicAssets/
 Debug/
+
+# Local Claude settings can contain secrets
+.claude/settings.local.json
+.wrangler/
