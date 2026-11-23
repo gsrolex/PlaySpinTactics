@@ -345,6 +345,16 @@
           <a class="plaque plaque-go" href="https://store.steampowered.com/app/3856990/Spin_Tactics/?utm_source=website&amp;utm_campaign=bottom" target="_blank" rel="noopener">Wishlist on Steam</a>
           <a class="plaque" href="press/">Press kit</a>
         </div>
+        <div class="signup" data-signup="players" hidden>
+          <h3>Get news by email</h3>
+          <p>I only write when something big happens: a major update, a sale, or my next game. You can unsubscribe anytime.</p>
+          <form method="post">
+            <label class="sr-only" for="signupPlayers">Email address</label>
+            <input id="signupPlayers" type="email" name="email_address" placeholder="Your email" autocomplete="email" required>
+            <button class="plaque" type="submit">Sign up</button>
+          </form>
+          <p class="signup-msg" role="status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>
@@ -438,5 +448,6 @@
     lb.addEventListener('click', function () { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.click(); });
   </script>
+  <script src="assets/signup.js" defer></script>
 </body>
 </html>
