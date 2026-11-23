@@ -25,16 +25,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/keyart/hero-kragg.webp">
+  <link rel="preload" as="image" href="assets/hero-cards/cue-astra-legendary.webp">
   <link rel="stylesheet" href="assets/machine.css">
   <style>
     /* ---------- the screen: key art, logo, stage, menu plaques ---------- */
-    .screen { position: relative; min-height: min(70vh, 680px); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
-    .screen-art { position: absolute; inset: 0; background: url("assets/keyart/hero-kragg.webp") 50% 22% / cover no-repeat; }
-    .screen-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, var(--bg) 98%), linear-gradient(90deg, rgba(11, 6, 22, .72), transparent 34%); }
-    .screen-logo { position: absolute; left: max(24px, 5vw); top: 28px; width: clamp(150px, 19vw, 280px); filter: drop-shadow(0 0 22px rgba(196, 91, 255, .5)); }
-    .screen-menu { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0 16px 34px; }
-    .screen .stage { position: absolute; left: 50%; bottom: 8px; width: min(980px, 92%); }
+    .screen { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; padding-top: 30px; }
+    .screen-art { position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 55% at 50% 62%, rgba(140, 60, 220, .28), transparent 70%),
+        linear-gradient(rgba(190, 140, 255, .07) 1px, transparent 1px) 0 0 / 48px 48px,
+        linear-gradient(90deg, rgba(190, 140, 255, .07) 1px, transparent 1px) 0 0 / 48px 48px;
+      -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 96%); mask-image: linear-gradient(180deg, #000 30%, transparent 96%); }
+    .screen-logo { position: relative; width: clamp(150px, 16vw, 230px); filter: drop-shadow(0 0 18px rgba(196, 91, 255, .35)); }
+    .hand { position: relative; display: flex; justify-content: center; align-items: flex-end; margin-top: -6px; padding: 26px 0 8px; }
+    .hand figure { --w: clamp(96px, 11vw, 170px); width: var(--w); margin: 0 calc(var(--w) * -.16); transform-origin: 50% 120%; transform: rotate(var(--r)) translateY(var(--y)); }
+    .hand img { display: block; width: 100%; height: auto; filter: drop-shadow(0 10px 22px rgba(0, 0, 0, .55)); animation: drift 7s ease-in-out infinite; animation-delay: var(--d); }
+    .hand figure:nth-child(1) { --r: -15deg; --y: 34px; --d: -1s; }
+    .hand figure:nth-child(2) { --r: -10deg; --y: 14px; --d: -3s; }
+    .hand figure:nth-child(3) { --r: -5deg;  --y: 3px;  --d: -5s; }
+    .hand figure:nth-child(4) { --r: 0deg;   --y: 0px;  --d: -2s; --w: clamp(112px, 13vw, 200px); z-index: 4; }
+    .hand figure:nth-child(5) { --r: 5deg;   --y: 3px;  --d: -4s; }
+    .hand figure:nth-child(6) { --r: 10deg;  --y: 14px; --d: -6s; }
+    .hand figure:nth-child(7) { --r: 15deg;  --y: 34px; --d: -2.5s; }
+    .hand figure { position: relative; } .hand figure:nth-child(1), .hand figure:nth-child(7) { z-index: 1; } .hand figure:nth-child(2), .hand figure:nth-child(6) { z-index: 2; } .hand figure:nth-child(3), .hand figure:nth-child(5) { z-index: 3; }
+    @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .screen-line { position: relative; margin-top: 18px; font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: clamp(.8rem, 1.2vw, .95rem); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center; padding-inline: 16px; }
+    .screen-menu { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 18px 16px 40px; }
+
+    .intro { border: 0; background: none; padding-block: 8px 40px; }
+    .intro h1 { font-size: clamp(1.2rem, 2.6vw, 1.9rem); color: #e8e0fb; }
+    .intro .band-meta { color: var(--muted); }
+    .intro .band-meta i { background: var(--muted); box-shadow: none; }
+    .intro .band-lede { font-size: 1.15rem; color: var(--muted); }
 
     /* ---------- trailer: the board's chasing bulbs ---------- */
     .trailer { padding-block: 64px 28px; }
@@ -144,12 +166,11 @@
       .shots-section { padding-bottom: 72px; }
     }
     @media (max-width: 720px) {
-      .screen { min-height: 0; padding-top: 60vw; background: var(--bg); }
-      .screen-art { bottom: auto; height: 72vw; background-position: 50% 0; }
-      .screen-art::after { background: linear-gradient(180deg, transparent 62%, var(--bg)); }
-      .screen-logo { width: 110px; left: 14px; top: 14px; }
-      .screen-menu { padding-top: 22px; }
-      .screen .stage { display: none; }
+      .screen { padding-top: 18px; }
+      .screen-logo { width: 120px; }
+      .hand figure { --w: 22vw; }
+      .hand figure:nth-child(4) { --w: 27vw; }
+      .hand figure:nth-child(1), .hand figure:nth-child(7) { display: none; }
       .screen-menu .plaque { width: 100%; }
       .readout div { display: block; padding: 10px 0; }
       .readout .dots { display: none; }
@@ -160,7 +181,7 @@
       .bulbs rect { x: 5px; y: 5px; width: calc(100% - 10px); height: calc(100% - 10px); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .bulbs .lit, .fire-line::after { animation: none; }
+      .bulbs .lit, .fire-line::after, .hand img { animation: none; }
     }
   </style>
 </head>
@@ -169,15 +190,24 @@
   <main id="top">
 
     <section class="screen">
-      <div class="screen-art" role="img" aria-label="Warlord Kragg and other Companion cards on a neon board, under a boss portrait"></div>
+      <div class="screen-art" aria-hidden="true"></div>
       <img class="screen-logo" src="assets/logo-glow.webp" alt="Spin Tactics" width="1000" height="1022">
-      <div class="stage" aria-hidden="true"></div>
+      <div class="hand">
+        <figure><img src="assets/hero-cards/giggles-common.webp" alt="Giggles, Common Companion" width="480" height="732"></figure>
+        <figure><img src="assets/hero-cards/lady-luna-rare.webp" alt="Lady Luna, Rare Companion" width="480" height="732"></figure>
+        <figure><img src="assets/hero-cards/magnus-starfall-epic.webp" alt="Magnus Starfall, Epic Companion" width="480" height="732"></figure>
+        <figure><img src="assets/hero-cards/cue-astra-legendary.webp" alt="Cue Astra, Legendary Companion" width="480" height="732" fetchpriority="high"></figure>
+        <figure><img src="assets/hero-cards/star-wyrm-epic.webp" alt="Star-Wyrm, Epic Companion" width="480" height="732"></figure>
+        <figure><img src="assets/hero-cards/nebulajelly-rare.webp" alt="NebulaJelly, Rare Companion" width="480" height="732"></figure>
+        <figure><img src="assets/hero-cards/quickdraw-common.webp" alt="Quickdraw, Common Companion" width="480" height="732"></figure>
+      </div>
+      <p class="screen-line">90+ Companions. You pick eight.</p>
       <div class="screen-menu">
         <a class="plaque plaque-go" href="https://store.steampowered.com/app/3856990/Spin_Tactics/?utm_source=website&amp;utm_campaign=hero#game_area_purchase" target="_blank" rel="noopener">Get it on Steam</a>
       </div>
     </section>
 
-    <section class="band">
+    <section class="band intro">
       <div class="wrap">
         <h1>A roguelike strategy game inside a slot machine.</h1>
         <p class="band-meta"><span>Out now on Steam</span><i></i><span>Windows &amp; macOS</span></p>
